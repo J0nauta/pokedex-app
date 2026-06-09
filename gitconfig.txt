@@ -1,0 +1,6 @@
+-- Configuração do  Git
+git config --global user.name J0nauta
+git config --global user.email jhonataromao2010@gmail.com
+
+-- Criar um projeto React Native
+npx create-expo-app@latest pokedex
