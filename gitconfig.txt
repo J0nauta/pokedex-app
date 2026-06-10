@@ -4,3 +4,7 @@ git config --global user.email jhonataromao2010@gmail.com
 
 -- Criar um projeto React Native
 npx create-expo-app@latest pokedex
+
+cd pokedex
+npm i @expo/vector-icons
+
