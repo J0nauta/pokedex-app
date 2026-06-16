@@ -8,3 +8,5 @@ npx create-expo-app@latest pokedex
 cd pokedex
 npm i @expo/vector-icons
 
+para iniciar o projeto
+npx expo start
