@@ -3,6 +3,7 @@ import { Dimensions, Image, StyleSheet, Text, View, ScrollView } from 'react-nat
 import  Button  from "../components/Header/Button";
 import  Header  from "../components/Header";
 import  TextInfo  from "../components/TextInfo";
+import { styles } from '../components/Header/styles';
 
 
 const width = Dimensions.get("window").width;
@@ -17,7 +18,9 @@ export default function PokemonDetail() {
             title={`#${pokemon.Numero} - ${pokemon.Nome}`}
             back={true}
             />
-            
+            <View style={[styles.card, { backgroundColor: tipos[0].Cor }]}>
+                <View style={styles.imageContainer}>
+
         </View>
     )
 }
