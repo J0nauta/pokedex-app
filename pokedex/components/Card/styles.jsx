@@ -32,8 +32,10 @@ export const styles = StyleSheet.create({
     imagem: {
         width: 140,
         height: 140,
-        right: 18,
+        right: 10,
         position: 'absolute',
         top: -20,
+        
+  
     },
 });

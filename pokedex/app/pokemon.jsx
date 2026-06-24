@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from 'expo-router';
 import { Dimensions, Image, StyleSheet, Text, View, ScrollView } from 'react-native';
-import  Button  from "../components/Header/Button";
+import  Button  from "../components/Button";
 import  Header  from "../components/Header";
 import  TextInfo  from "../components/TextInfo";
 

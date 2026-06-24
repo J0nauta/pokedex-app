@@ -1,8 +1,9 @@
 import { Image, View, Text, ScrollView, TouchableOpacity } from "react-native";
-import { POKEMON_TYPE_COLORS } from "../../utils/colors";
+import { POKEMON_TYPE_COLORS } from "../../Utils/colors";
 import { styles } from "./styles";
 import  Button  from "../Button";
 import { useRouter } from "expo-router";
+import { use } from "react";
 
 export default function Card({ pokemon }) {
     const router = useRouter();
@@ -26,9 +27,9 @@ export default function Card({ pokemon }) {
                 ))}
             </ScrollView>
             </View>
-            <view style={styles.imageContainer}>
+            <View style={styles.imageContainer}>
                 <Image source={{ uri: pokemon.Imagem }} style={styles.imagem}/>
-            </view>
+            </View>
         </TouchableOpacity>
     );
 }

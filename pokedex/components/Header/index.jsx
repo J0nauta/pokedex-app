@@ -3,15 +3,15 @@ import { styles } from "./styles";
 import { Ionicons} from "@expo/vector-icons";
 import {useRouter} from "expo-router";
 
-const imageSource = require("@/assets/images;header;jpeg");
+const imageSource = require("@/assets/images/header.jpg");
 
 export default function Header({ title, back = false }) {
     const router = useRouter();
 
     return (
         <View style={styles.container}>
-            <View style={style.imageContainer}>
-                <umage source= {imageSource} style={styles.image}/>
+            <View style={styles.imageContainer}>
+                <Image source= {imageSource} style={styles.image}/>
             </View>
             <View style={styles.titleContainer}>
                 <View style={{ flexDirection: "row", alignItems: "center"}}>

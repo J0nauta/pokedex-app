@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { pokemons } from "@/data/pokemons"
+import { pokemons } from "@/Data/pokemons"
 import Header from "@/components/Header";
-import Card from "../components/Header/Card"
+import Card from "../components/Card"
 
 export default function index() {
 
@@ -12,7 +12,7 @@ export default function index() {
 
 
   return (
-    <view style={styles.container}>
+    <View style={styles.container}>
       <Header title="Pokédex" />
       <FlatList
       data={pokemons}
@@ -23,7 +23,7 @@ export default function index() {
       maxToRenderPerBatch={10}
       windowSize={5}
       />  
-    </view>
+    </View>
   );
 }
 
