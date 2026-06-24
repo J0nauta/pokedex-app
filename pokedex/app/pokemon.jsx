@@ -3,15 +3,14 @@ import { Dimensions, Image, StyleSheet, Text, View, ScrollView } from 'react-nat
 import  Button  from "../components/Header/Button";
 import  Header  from "../components/Header";
 import  TextInfo  from "../components/TextInfo";
-import { styles } from '../components/Header/styles';
-
 
 const width = Dimensions.get("window").width;
 
 export default function PokemonDetail() {
     const pokemon = useLocalSearchParams();
     const tipos =
-    typeof pokemon.Tipo === "string" ? JSON.parse(pokemon.Tipo) : pokemon.Tipo;
+        typeof pokemon.Tipo === "string" ? JSON.parse(pokemon.Tipo) : pokemon.Tipo;
+    
     return (
         <View style={styles.container}>
             <Header
@@ -20,9 +19,63 @@ export default function PokemonDetail() {
             />
             <View style={[styles.card, { backgroundColor: tipos[0].Cor }]}>
                 <View style={styles.imageContainer}>
+                    <Image
+                      source={{ uri: pokemon.Imagem }}
+                      style={styles.image}
+                    />
+                </View>
+                <ScrollView
+                horizontal
+                contentContainerStyle={{
+                    flexGrow: 1,
+                    flexDirection: "row",
+                    alignItens: "center",
+                    justifyContent: "center",
+                }}>
+                {tipos.map((tipo) => (
+                <Button
+                   tipo={tipo}
+                   key={tipo.Nome}
+                   large={true}
+                />
+                ))}
+                </ScrollView>
+                <View style={styles.dataContainer}>
+                    <TextInfo label='Descrição' text={pokemon.Descricao} />
+                    <TextInfo label='Espécie' text={pokemon.Especie} />
+                    <TextInfo label='Altura' text={pokemon.Altura + ' mst'} />
+                    <TextInfo label='Peso' text={pokemon.Peso + 'kg'} />
+                </View>
 
         </View>
-    )
+    </View>
+    );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+        flexDirection: "column",
+    },
+    card: {
+        flex: 1,
+        width: width - 30,
+        margin: 15,
+        borderRadios: 8,
+        borderColor: "black",
+        borderWidth: 1,
+    },
+    imageContainer: {
+        justiftContent: "center",
+        alignItems: "center",
+    },
+    image: {
+        width: width - 60,
+        heigth: width - 60,
+    },
+    dataContainer: {
+        heigth: 260,
+        paddingHorizontal: 20
+    },
+});
